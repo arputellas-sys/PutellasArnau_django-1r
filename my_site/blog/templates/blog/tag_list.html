@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Etiquetes{% endblock %}
+
+{% block content %}
+  <section class="authors-section">
+    <h2 style="text-align: center; margin-bottom: 30px;">Etiquetes</h2>
+
+    <div class="tag-grid">
+      {% for tag in tags %}
+        <a href="{% url 'tag-posts' tag.name %}" class="tag-badge">{{ tag.name }}</a>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

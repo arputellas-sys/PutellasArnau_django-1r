@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Tots els Posts{% endblock %}
+
+{% block content %}
+  <h2 style="margin: 30px 0; text-align: center;">Llistat de tots els posts</h2>
+  <section class="posts-grid">
+    {% for post in posts %}
+      <div class="post-card">
+        {% if post.image %}
+          <img src="{{ post.image.url }}" alt="Imatge de {{ post.title }}">
+        {% else %}
+          <img src="{% static 'imatges/banner.jpg' %}" alt="Imatge per defecte">
+        {% endif %}
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt }}</p>
+        <a href="{% url 'posts-detail' post.slug %}">Llegir més...</a>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

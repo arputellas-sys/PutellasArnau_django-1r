@@ -1,0 +1,57 @@
+[
+  {
+    "model": "blog.author",
+    "pk": 1,
+    "fields": {
+      "name": "Clara",
+      "surname": "Pons",
+      "email": "clara@example.com",
+      "bio": "Redactora i desenvolupadora apassionada pel món web."
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 1,
+    "fields": {
+      "name": "django"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 2,
+    "fields": {
+      "name": "python"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "Millorar el rendiment del teu lloc web",
+      "slug": "millorar-rendiment-web",
+      "content": "Millorar el rendiment del teu lloc web pot tenir un impacte significatiu en l'experiència d'usuari i en les classificacions SEO.",
+      "excerpt": "Un bon rendiment web és crucial per oferir una bona experiència d'usuari. Aquí tens alguns consells...",
+      "date": "2024-05-23",
+      "author": 1,
+      "tags": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+      "title": "Introducció a Python per desenvolupadors web",
+      "slug": "introduccio-python-web",
+      "content": "Python és un llenguatge potent i fàcil d'utilitzar. És ideal per a backend amb Django o Flask.",
+      "excerpt": "Una guia ràpida per començar amb Python si vens del món del desenvolupament web.",
+      "date": "2024-05-20",
+      "author": 1,
+      "tags": [
+        2
+      ]
+    }
+  }
+]

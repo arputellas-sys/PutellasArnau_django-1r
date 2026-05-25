@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="header-container">
+            <img src="{% static 'imatges/banner.jpg' %}" alt="Banner del Blog" class="header-image">
+            <div class="header-overlay">
+                <h1>Benvingut al Blog 0485 - UF6</h1>
+                <p>Aquest és el projecte d'aprenentatge 0485-UF6 basat en Django</p>
+            </div>
+        </section>
+
+        <section class="posts-section">
+            <h2>Els Darrers Posts</h2>
+            <div class="posts-grid">
+                {% for post in posts %}
+                    {% include "blog/partials/post_card.html" %}
+                {% endfor %}
+            </div>
+        </section>
+        
+        <section class="django-section">
+            <h2>Django</h2>
+            <p>Django és un framework popular de desenvolupament web de codi obert que s'utilitza per crear aplicacions web robustes i escalables en Python. Va ser creat l'any 2003 per Adrian Holovaty i Simon Willison mentre treballaven en el lloc web de notícies Lawrence Journal-World.</p><br>
+            <p>Django segueix el patró de disseny Model-Vista-Controlador (MVC), que separa la lògica de presentació de les dades de la interacció amb l'usuari. El framework també proporciona eines pel treball amb de bases de dades, l'autenticació d'usuaris i la gestió de formularis, entre altres característiques.</p>
+        </section>
+    </main>
+{% endblock %}

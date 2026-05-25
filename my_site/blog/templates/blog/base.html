@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    {% block header %}{% endblock %}
+
+    <header>
+        <nav>
+            <a class="nav-barra" href="{% url 'index' %}">INICI</a>
+            <a class="nav-barra" href="{% url 'posts-list' %}">POSTS</a>
+            <a class="nav-barra" href="{% url 'authors-list' %}">AUTORS</a>
+            <a class="nav-barra" href="{% url 'tags-list' %}">TAGS</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© Copyright 2026 Arnau Putellas Vila</p>
+    </footer>
+</body>
+</html>

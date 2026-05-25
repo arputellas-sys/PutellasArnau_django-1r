@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  <section class="post-detail-layout">
+    <h1>{{ post.title }}</h1>
+
+    {% if post.excerpt %}
+      <p class="excerpt">{{ post.excerpt }}</p>
+    {% endif %}
+
+    <p class="meta">
+      {{ post.date }} – {{ post.author.name }} {{ post.author.surname }}
+    </p>
+
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="Imatge de {{ post.title }}">
+    {% else %}
+      <img src="{% static 'imatges/banner.jpg' %}" alt="Imatge per defecte">
+    {% endif %}
+
+    <div class="post-content">
+      {{ post.content }}
+    </div>
+  </section>
+{% endblock %}

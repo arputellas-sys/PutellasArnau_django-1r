@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Barra de navegació */
+header, nav {
+    background-color: #1a1a1a; /* Negre una mica més suau */
+    color: white;
+    padding: 8px;
+}
+
+/* Peu de pàgina */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px; 
+    margin-top: 0px;
+    text-align: center;
+}
+
+/* Contenidor de capçalera */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Una mica més alt perquè es vegi bé el bàner */
+}
+
+/* Imatge de capçalera */
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    display: block;
+}
+
+/* Text de capçalera - MODIFICAT PERQUÈ ES LLEGEIXI BÉ SOBRE EL BÀNER */
+.header-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.8); /* Fons negre semitransparent */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #28a745; /* Vora verd hacker */
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.4); /* Resplendor verd exterior */
+}
+
+.header-overlay h1, .header-overlay p {
+    margin: 5px 0;
+    text-shadow: none;
+}
+
+section {
+    text-align: center;
+}
+
+/* Secció de posts */
+.posts-section {
+    padding: 30px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+/* Targetes personalitzades */
+.post-card {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    min-width: 180px;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(40, 167, 69, 0.15); /* Ombra verda fluixeta */
+    border-color: #28a745; /* La vora es torna verda al passar el ratolí */
+}
+
+.post-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover img {
+    transform: scale(1.02);
+}
+
+.post-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.post-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.5;
+    height: auto;
+}
+
+/* Graella de posts */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Secció de Django */
+.django-section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #28a745; /* Verd hacker per als enllaços */
+}
+
+.nav-barra {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.nav-barra:hover {
+    color: #28a745;
+}
+
+/* Secció de llista d'autors */
+.authors-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.authors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.authors-table th,
+.authors-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.authors-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.authors-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.btn-see-more {
+    background-color: #28a745; /* Botons verds */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-see-more:hover {
+    background-color: #1e7e34; /* Verd fosc */
+    color: white;
+}
+
+.author-card {
+    margin: 0 auto 30px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.author-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.author-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.author-info {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.author-info p {
+    margin-bottom: 10px;
+}
+
+.tag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tag-badge {
+    background-color: #222;
+    color: #28a745; 
+    border: 1px solid #28a745;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: lowercase;
+    transition: all 0.3s ease;
+}
+
+.tag-badge:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.post-detail-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.post-detail-layout h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.post-detail-layout .excerpt {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 20px;
+    border-left: 4px solid #28a745; /* Línia verda decorativa a l'esquerra del resum */
+    padding-left: 10px;
+}
+
+.post-detail-layout .meta {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.post-detail-layout img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+
+.post-content {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}

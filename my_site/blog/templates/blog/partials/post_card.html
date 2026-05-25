@@ -1,0 +1,11 @@
+{% load static %}
+<div class="post-card">
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% else %}
+      <img src="{% static 'imatges/banner.jpg' %}" alt="Imatge per defecte">
+    {% endif %}
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content|truncatewords:20 }}</p>
+    <a href="{% url 'posts-detail' post.slug %}">Llegeix més →</a>
+</div>

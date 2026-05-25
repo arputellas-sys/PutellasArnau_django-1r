@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Posts amb la tag "{{ tag.name }}"{% endblock %}
+
+{% block content %}
+  <section class="authors-section">
+    <h2 style="text-align: center; margin-bottom: 30px;">
+      Llistat de tots els posts amb l'etiqueta <strong style="color: orangered;">{{ tag.name }}</strong>
+    </h2>
+
+    <section class="posts-grid">
+      {% for post in posts %}
+        <div class="post-card">
+          {% if post.image %}
+            <img src="{{ post.image.url }}" alt="Imatge de {{ post.title }}">
+          {% else %}
+            <img src="{% static 'imatges/banner.jpg' %}" alt="Imatge per defecte">
+          {% endif %}
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt }}</p>
+          <a href="{% url 'posts-detail' post.slug %}">Llegir més...</a>
+        </div>
+      {% endfor %}
+    </section>
+  </section>
+{% endblock %}
