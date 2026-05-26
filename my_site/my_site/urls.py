@@ -17,7 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+"""
+Arxiu principal d'enrutament del projecte sencer. 
+Distribueix el trànsit d'internet cap a les diferents aplicacions.
+"""
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),  # <--- afegim aquesta línia
+    # Redirigeix totes les peticions base cap a les rutes de la nostra app 'blog'
+    path('', include('blog.urls')),
 ]
